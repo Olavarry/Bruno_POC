@@ -5,12 +5,12 @@ meta {
 }
 
 get {
-  url: https://financialmodelingprep.com/stable/company-screener?apikey=awsqzdvlpugFQrdxr6ao1ukzFuborA4k&marketCapMoreThan=200000000000
+  url: https://financialmodelingprep.com/stable/company-screener?apikey={{apikey}}&marketCapMoreThan=200000000000
   body: none
   auth: inherit
 }
 
 params:query {
-  apikey: awsqzdvlpugFQrdxr6ao1ukzFuborA4k
+  apikey: {{apikey}}
   marketCapMoreThan: 200000000000
 }
