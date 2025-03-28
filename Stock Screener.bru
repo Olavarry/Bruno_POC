@@ -1,0 +1,16 @@
+meta {
+  name: Stock Screener
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://financialmodelingprep.com/stable/company-screener?apikey=awsqzdvlpugFQrdxr6ao1ukzFuborA4k&marketCapMoreThan=200000000000
+  body: none
+  auth: inherit
+}
+
+params:query {
+  apikey: awsqzdvlpugFQrdxr6ao1ukzFuborA4k
+  marketCapMoreThan: 200000000000
+}
