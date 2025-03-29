@@ -5,12 +5,18 @@ meta {
 }
 
 get {
-  url: https://financialmodelingprep.com/stable/search-symbol?query=AAPL&apikey={{apikey}}
+  url: https://financialmodelingprep.com/stable/search-symbol?query=AAPL&apikey={{apiKey}}
   body: none
   auth: inherit
 }
 
 params:query {
   query: AAPL
-  apikey: {{apikey}}
+  apikey: {{apiKey}}
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equals(200)
+  });
 }

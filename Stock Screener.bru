@@ -5,12 +5,18 @@ meta {
 }
 
 get {
-  url: https://financialmodelingprep.com/stable/company-screener?apikey={{apikey}}&marketCapMoreThan=200000000000
+  url: https://financialmodelingprep.com/stable/company-screener?apikey={{apiKey}}&marketCapMoreThan=200000000000
   body: none
   auth: inherit
 }
 
 params:query {
-  apikey: {{apikey}}
+  apikey: {{apiKey}}
   marketCapMoreThan: 200000000000
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equals(200)
+  });
 }
