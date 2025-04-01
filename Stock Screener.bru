@@ -15,8 +15,13 @@ params:query {
   marketCapMoreThan: 200000000000
 }
 
+assert {
+  res.status: eq 200
+}
+
 tests {
-  test("Status code is 200", function () {
+  /*test("Status code is 200", function () {
       expect(res.getStatus()).to.equals(200)
   });
+  */
 }

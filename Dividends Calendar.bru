@@ -5,18 +5,27 @@ meta {
 }
 
 get {
-  url: https://financialmodelingprep.com/stable/dividends?symbol=JNJ&apikey={{apiKey}}
+  url: https://financialmodelingprep.com/stable/dividends?symbol={{symbol}}&apikey={{apiKey}}
   body: none
   auth: inherit
 }
 
 params:query {
-  symbol: JNJ
+  symbol: {{symbol}}
   apikey: {{apiKey}}
 }
 
+assert {
+  res.status: eq 200
+}
+
+script:pre-request {
+  bru.getEnvVar("symbol")
+}
+
 tests {
-  test("Status code is 200", function () {
+  /*test("Status code is 200", function () {
       expect(res.getStatus()).to.equals(200)
   });
+  */
 }

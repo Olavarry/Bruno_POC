@@ -15,8 +15,22 @@ params:query {
   apikey: {{apiKey}}
 }
 
+assert {
+  res.status: eq 200
+  res.body[0].symbol: eq AAPL
+  res.body.length: gt 1
+  ~res.body[3].symbol: eq AAPL.MX
+}
+
+script:post-response {
+  
+  bru.setEnvVar("symbol",res.body[0].symbol)
+}
+
 tests {
-  test("Status code is 200", function () {
-      expect(res.getStatus()).to.equals(200)
-  });
+  //test("Status code is 200", function () {
+  //    expect(res.getStatus()).to.equals(200)
+  //});
+  
+  
 }
